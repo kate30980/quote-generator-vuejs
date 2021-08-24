@@ -5,7 +5,6 @@
     <div class="button-container">
       <button @click="getQuote">Generate</button>
     </div>
-    <QuoteList :quotes="quotes" />
   </div>
 </template>
 
@@ -19,8 +18,7 @@ export default {
   name: 'App',
   components: {
     Header,
-    Quote,
-    QuoteList,
+    Quote
   },
   data(){
     return{

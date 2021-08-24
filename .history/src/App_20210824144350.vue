@@ -1,39 +1,33 @@
 <template>
   <div class="app">
     <Header title="The Anime Quoter" />
-    <Quote :quote="quote" />
-    <div class="button-container">
-      <button @click="getQuote">Generate</button>
-    </div>
-    <QuoteList :quotes="quotes" />
+    <Quote :quote="quote " />
   </div>
 </template>
 
 <script>
 
 import Header from './components/Header.vue';
-import Quote from './components/Quote.vue';
-import QuoteList from './components/QuoteList.vue';
+import Quote from './components/Quote.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Quote,
-    QuoteList,
+    Quote
   },
   data(){
     return{
-      quote: {},
+      quote: {
+        content: 'Content goes here',
+        anime: 'Naruto',
+        character: 'Madara'
+      },
       quotes: [],
     }
   },
   methods: {
     async getQuote(){
-      if(this.quote.content){
-        this.quotes = [...this.quotes, this.quote];
-      }
-
       const data = await fetch('https://animechan.vercel.app/api/random').then(res => res.json());
 
       this.quote = {
@@ -43,7 +37,7 @@ export default {
       };
     }
   },
-  created(){
+  create(){
     this.getQuote();
   }
 }
@@ -63,28 +57,5 @@ export default {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Fira Sans', sans-serif;
-}
-.button-container{
-  display: flex;
-  justify-content: center;
-  padding: 0px 32px;
-  margin: 64px auto;
-}
-button{
-  border:none;
-  outline: none;
-  background-color: var(--primary);
-
-  padding: 16px 32px;border-radius:99px;
-
-  color: var(--light);
-  font-size: 28px;
-  font-weight: 700;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: 0.4s;
-}
-button:hover{
-  background-color: var(--secondary);
 }
 </style>

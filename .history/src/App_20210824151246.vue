@@ -5,7 +5,6 @@
     <div class="button-container">
       <button @click="getQuote">Generate</button>
     </div>
-    <QuoteList :quotes="quotes" />
   </div>
 </template>
 
@@ -13,14 +12,12 @@
 
 import Header from './components/Header.vue';
 import Quote from './components/Quote.vue';
-import QuoteList from './components/QuoteList.vue';
 
 export default {
   name: 'App',
   components: {
     Header,
-    Quote,
-    QuoteList,
+    Quote
   },
   data(){
     return{

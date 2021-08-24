@@ -1,12 +1,11 @@
 <template>
-  <div class="hello">
-    
-  </div>
+    <header>
+        <h1>{{ title }}</h1>
+    </header>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
   
 }
 </script>

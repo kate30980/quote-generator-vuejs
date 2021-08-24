@@ -20,7 +20,6 @@ export default {
   components: {
     Header,
     Quote,
-    QuoteList,
   },
   data(){
     return{

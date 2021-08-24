@@ -5,7 +5,7 @@
     <div class="button-container">
       <button @click="getQuote">Generate</button>
     </div>
-    <QuoteList :quotes="quotes" />
+    <QuoteList :quote="quotes" />
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
   name: 'App',
   components: {
     Header,
-    Quote,
+    Quote, 
     QuoteList,
   },
   data(){
